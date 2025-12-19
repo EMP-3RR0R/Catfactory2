@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <title>Корзина — Креативная киска</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/basket.css">
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-navigation">
+        <a href="index.html"><img src="logo.png" alt="Наш логотип"></a>
+        <ul>
+          <li class="menu-user"><a href="user.html">Профиль</a></li>
+          <li class="menu-basket"><a href="basket.html" class="active">В корзину</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h1 class="main-title">Ваша корзина</h1>
+      <p class="main-description">
+        Тут собрались все киски, которых вы приручили (или хотя бы попробовали).  
+        Осталось решить — кто поедет к вам первым.
+      </p>
+
+      <section class="basket-items" aria-labelledby="basket-title">
+        <h2 id="basket-title" class="visually-hidden">Список товаров в корзине</h2>
+        <div id="basket-empty" class="basket-empty">Корзина пуста. Перейдите к конструктору, чтобы добавить котика.</div>
+        <div id="basket-list" class="basket-list"></div>
+      </section>
+
+      <section class="basket-summary">
+        <h2 class="visually-hidden">Итоговая сумма</h2>
+        <p id="basket-total" class="basket-total"></p>
+        <div class="basket-actions">
+          <button id="basket-clear" class="btn-secondary" type="button">Очистить корзину</button>
+          <button class="btn-checkout" type="button">Оформить заказ</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-inner">
+        <p>&copy; 2025 Котозавод «Креативная киска»</p>
+        <p class="footer-tagline">
+	  	  Мы не просто создаём котов — мы выпускаем в мир пушистые катастрофы с душой.
+        </p>
+        <ul class="footer-socials">
+          <li>
+            <a href="https://t.me/yourcatfactory" target="_blank" rel="noopener noreferrer">
+              <img src="icons/telegram.png" alt="Telegram">
+            </a>
+          </li>
+          <li>
+            <a href="https://vk.com/yourcatfactory" target="_blank" rel="noopener noreferrer">
+              <img src="icons/vk.png" alt="ВКонтакте">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script type="module" src="scripts/storage.js"></script>
+	<script type="module" src="scripts/auth.js"></script>
+	<script type="module" src="scripts/auth-modal.js"></script>
+	<script type="module" src="scripts/header-manager.js"></script>
+    <script type="module" src="scripts/basket.js"></script>
+  </body>
+</html>

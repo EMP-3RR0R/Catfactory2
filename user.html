@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <title>Профиль пользователя — Креативная киска</title>
+    <link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/user.css">
+  </head>
+  <body class="profile-page">
+    <header class="main-header">
+      <nav class="main-navigation">
+        <a href="index.html"><img src="logo.png" alt="Наш логотип"></a>
+        <ul>
+          <li><a href="user.html" class="active">Профиль</a></li>
+          <li><a href="basket.html">В корзину</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h1 class="main-title">Ваш профиль</h1>
+      <p class="main-description">
+        Добро пожаловать, <strong id="user-greeting">Мяустр</strong>!  
+        Здесь вы можете погладить данные своего аккаунта и узнать, сколько кисок уже мурчит у вас дома.
+      </p>
+
+      <!-- Сначала заказы -->
+      <section class="user-orders-section">
+        <h2>Ваши киски</h2>
+        <p>История заказов — пушистая летопись ваших предпочтений.</p>
+
+        <ul class="order-list" id="order-list">
+        </ul>
+      </section>
+
+      <section class="user-summary-section">
+        <h2>Ваши данные</h2>
+        <div class="user-summary">
+          <p><strong>Имя:</strong> <span id="user-name-summary">Загрузка...</span></p>
+          <p><strong>Email:</strong> <span id="user-email-summary">Загрузка...</span></p>
+          <p><strong>Телефон:</strong> <span id="user-phone-summary">Загрузка...</span></p>
+          <p><strong>Адрес доставки:</strong> <span id="user-address-summary">Загрузка...</span></p>
+        </div>
+      </section>
+
+      <section class="user-form-section">
+        <h2>Редактировать профиль</h2>
+        <form class="user-form" id="profile-form">
+          <div class="form-field">
+            <label for="profile-name">Имя</label>
+            <input type="text" id="profile-name" name="name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="profile-email">E-mail</label>
+            <input type="email" id="profile-email" name="email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="profile-phone">Телефон</label>
+            <input type="tel" id="profile-phone" name="phone" placeholder="+7 (900) 123-45-67">
+          </div>
+
+          <div class="form-field">
+            <label for="profile-address">Адрес доставки</label>
+            <textarea id="profile-address" name="address" rows="3" placeholder="Город, улица, дом, квартира"></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="profile-password">Новый пароль (оставьте пустым, если не меняете)</label>
+            <input type="password" id="profile-password" name="password" placeholder="Минимум 6 символов" minlength="6">
+          </div>
+
+          <div class="form-field">
+            <label for="profile-password-confirm">Подтверждение нового пароля</label>
+            <input type="password" id="profile-password-confirm" name="passwordConfirm" placeholder="Повторите пароль" minlength="6">
+          </div>
+
+          <div class="user-actions">
+            <button type="submit" class="btn-save">Сохранить изменения</button>
+            <button type="button" class="btn-logout" id="logout-btn-page">Выйти из аккаунта</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-inner">
+        <p>&copy; 2025 Котозавод «Креативная киска»</p>
+        <p class="footer-tagline">
+          Мы не просто создаём котов — мы выпускаем в мир пушистые катастрофы с душой.
+        </p>
+        <ul class="footer-socials">
+          <li>
+            <a href="https://t.me/yourcatfactory" target="_blank" rel="noopener noreferrer">
+              <img src="icons/telegram.png" alt="Telegram">
+            </a>
+          </li>
+          <li>
+            <a href="https://vk.com/yourcatfactory" target="_blank" rel="noopener noreferrer">
+              <img src="icons/vk.png" alt="ВКонтакте">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+	<script type="module" src="scripts/storage.js"></script>
+	<script type="module" src="scripts/auth.js"></script>
+	<script type="module" src="scripts/auth-modal.js"></script>
+	<script type="module" src="scripts/header-manager.js"></script>
+	<script type="module" src="scripts/user.js"></script>
+  </body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход в аккаунт — Креативная киска</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/index.css">
+  <style>
+    /* Дополнительные стили для страницы входа */
+    .login-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .login-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .login-container {
+      max-width: 500px;
+      width: 100%;
+      background: #fff9f4;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 10px 40px rgba(255, 107, 53, 0.15);
+      border-top: 8px solid #ff6b35;
+    }
+    
+    .login-title {
+      color: #ff6b35;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-size: 2.2rem;
+    }
+    
+    .login-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .login-form .form-field {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .login-form label {
+      color: #ff6b35;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    .login-form input {
+      padding: 1rem;
+      border: 2px solid #ffdecd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      background: #fff;
+    }
+    
+    .login-form input:focus {
+      border-color: #ff6b35;
+      outline: none;
+      background: #fff8f0;
+    }
+    
+    .login-button {
+      background: #ff6b35;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 1.1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 1rem;
+    }
+    
+    .login-button:hover {
+      background: #ff935f;
+    }
+    
+    .login-links {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+    
+    .login-links a {
+      color: #ff6b35;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 0.5rem;
+    }
+    
+    .login-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .error-message {
+      color: #ff4757;
+      background: rgba(255, 71, 87, 0.1);
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      text-align: center;
+      display: none;
+    }
+    
+    .error-message--visible {
+      display: block;
+    }
+    
+    .success-message {
+      color: #27ae60;
+      background: rgba(39, 174, 96, 0.1);
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      text-align: center;
+      display: none;
+    }
+    
+    .success-message--visible {
+      display: block;
+    }
+    
+    .login-back {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    
+    .login-back a {
+      color: #666;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .login-back a:hover {
+      color: #ff6b35;
+    }
+    
+    @media (max-width: 600px) {
+      .login-container {
+        padding: 2rem 1.5rem;
+      }
+      
+      .login-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body class="login-page">
+  <header class="main-header">
+    <nav class="main-navigation">
+      <a href="index.html"><img src="logo.png" alt="Наш логотип"></a>
+      <ul>
+        <li><a href="index.html">На главную</a></li>
+        <li><a href="register.html">Регистрация</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="login-main">
+    <div class="login-container">
+      <h1 class="login-title">Вход в аккаунт</h1>
+      <p class="login-subtitle">Войдите, чтобы сохранить корзину и отслеживать заказы</p>
+      
+      <div class="error-message" id="error-message"></div>
+      <div class="success-message" id="success-message"></div>
+      
+      <form class="login-form" id="login-form">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+        </div>
+        
+        <div class="form-field">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" name="password" required placeholder="Не менее 6 символов" minlength="6">
+        </div>
+        
+        <button type="submit" class="login-button">Войти</button>
+      </form>
+      
+      <div class="login-links">
+        <p>Нет аккаунта? <a href="register.html">Зарегистрируйтесь</a></p>
+        <p>Или <a href="index.html">продолжите как гость</a></p>
+      </div>
+      
+      <div class="login-back">
+        <a href="index.html">← Вернуться на главную</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <p>&copy; 2025 Котозавод «Креативная киска»</p>
+      <p class="footer-tagline">
+        Мы не просто создаём котов — мы выпускаем в мир пушистые катастрофы с душой.
+      </p>
+      <ul class="footer-socials">
+        <li>
+          <a href="https://t.me/yourcatfactory" target="_blank" rel="noopener noreferrer">
+            <img src="icons/telegram.png" alt="Telegram">
+          </a>
+        </li>
+        <li>
+          <a href="https://vk.com/yourcatfactory" target="_blank" rel="noopener noreferrer">
+            <img src="icons/vk.png" alt="ВКонтакте">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module">
+    import Auth from './scripts/auth.js';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginForm = document.getElementById('login-form');
+      const errorMessage = document.getElementById('error-message');
+      const successMessage = document.getElementById('success-message');
+      
+      if (Auth.isLoggedIn()) {
+        window.location.href = 'user.html';
+        return;
+      }
+      
+      loginForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        errorMessage.classList.remove('error-message--visible');
+        successMessage.classList.remove('success-message--visible');
+        
+        const formData = new FormData(loginForm);
+        const email = formData.get('email');
+        const password = formData.get('password');
+        
+        try {
+          await Auth.login(email, password);
+          
+          successMessage.textContent = 'Вход выполнен успешно! Перенаправляем...';
+          successMessage.classList.add('success-message--visible');
+          
+          setTimeout(() => {
+            const referrer = document.referrer;
+            if (referrer && referrer.includes(window.location.origin)) {
+              window.location.href = referrer;
+            } else {
+              window.location.href = 'user.html';
+            }
+          }, 1000);
+          
+        } catch (error) {
+          errorMessage.textContent = error.message || 'Ошибка при входе. Проверьте email и пароль.';
+          errorMessage.classList.add('error-message--visible');
+        }
+      });
+      
+      document.getElementById('email').focus();
+    });
+  </script>
+</body>
+</html>

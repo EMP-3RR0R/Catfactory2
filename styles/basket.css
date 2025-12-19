@@ -1,0 +1,154 @@
+.main-description {
+  margin-bottom: 1.5em;
+}
+
+.basket-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  position: relative;
+}
+
+.basket-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.basket-preview img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.basket-name {
+  margin: 0;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+
+.basket-info {
+  flex-grow: 1;
+}
+
+.basket-characteristics {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.basket-characteristics li {
+  margin-bottom: 5px;
+}
+
+.basket-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.basket-price p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.basket-check {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.basket-remove {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff4757;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.basket-remove:hover {
+  background-color: #ff3742;
+}
+
+.basket-summary {
+  text-align: right;
+  padding: 20px;
+  border-top: 2px solid #e0e0e0;
+  margin-top: 20px;
+}
+
+.basket-total {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+.btn-checkout {
+  padding: 12px 30px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-checkout:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 650px) {
+  .basket-item {
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+  }
+
+  .basket-preview,
+  .basket-price {
+    width: 100%;
+  }
+
+  .basket-price {
+    order: -1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-navigation ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
